@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 
   <!-- 3つのライブラリを読み込む -->
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <!--script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script-->
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
 </head>
@@ -20,7 +20,9 @@
   <button id="start">start</button>
   <button id="stop">stop</button>
   
-  <script>
+  <script type="module">
+    import { Camera } from "./Camera.js";
+    
     const video = document.getElementById('input');
     const canvas = document.getElementById('output');
     const ctx = canvas.getContext('2d');
