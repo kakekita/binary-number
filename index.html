@@ -30,15 +30,14 @@
       locateFile: file => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
     };
     const hands = new Hands(config);
-
-    //カメラからの映像をhands.jsで使えるようにする
+    
     const camera = new Camera(video, {
       onFrame: async () => {
         await hands.send({image: video});
       },
-      width: 600,
-      height: 400,
-      backcamera: false
+      width: 1280,
+      height: 720,
+      backcamera: true,
     });
 
     hands.setOptions({
